@@ -1,3 +1,33 @@
+// --- FITUR SALIN REKENING (KODE ACUAN WORK) ---
+const buttonsSalin = document.querySelectorAll(".salin");
+
+buttonsSalin.forEach(btn => {
+  btn.addEventListener("click", function () {
+    const norek = btn.getAttribute("data-norek");
+
+    // Fallback manual pakai tempInput (Cara lama yang ampuh)
+    const tempInput = document.createElement("input");
+    tempInput.value = norek;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Untuk iPhone/iOS
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    // Feedback kepada user
+    const teksAsli = btn.innerText;
+    btn.innerText = "Tersalin!";
+    btn.style.backgroundColor = "#4CAF50"; // Hijau
+    btn.style.color = "white";
+
+    setTimeout(() => {
+      btn.innerText = teksAsli;
+      btn.style.backgroundColor = ""; // Kembali ke CSS asli
+      btn.style.color = "";
+    }, 1500);
+  });
+});
+
 // 1. Registrasi Plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Langsung transisi
       gsap.to(home, {
         opacity: 0,
-        duration: 0.4,
+        duration: 1,
         ease: "power2.out",
         onComplete: () => {
           home.style.display = "none";
@@ -88,8 +118,8 @@ function initContentAnimations() {
         opacity: 0,
         scale: 0.98,
         y: 20,
-        duration: 1.5,
-        delay: index * 0.05,
+        duration: 2.5,
+        delay: index * 0.5,
         ease: "expo.out"
       });
     });
@@ -99,7 +129,7 @@ function initContentAnimations() {
     ".section2 h1, .section2 h2, .section2 p, .section2 button, " +
       ".section3 h1, .section3 h2, .section3 p, " +
       ".section4 .border, .section4 h1, .section4 h2, .section4 p, .section4 button, " +
-      ".section5 .wedding-gift, .section5 .card, .section5 h1"
+      ".section5 .wedding-gift, .section5 .card, .section5 h1, .lihat-lokasi"
   );
 
   if (standardElements.length > 0) {
@@ -112,7 +142,7 @@ function initContentAnimations() {
         },
         y: 35,
         opacity: 0,
-        duration: 1.5,
+        duration: 2,
         ease: "power2.out",
         clearProps: "all"
       });
@@ -122,17 +152,6 @@ function initContentAnimations() {
 
 // --- 5. EFEK WAVY ATAS-BAWAH (HANYA CHAR, ORNAMEN 3 & 4) ---
 function initFloatingOrnaments() {
-  const char = document.querySelector(".char");
-  if (char) {
-    gsap.to(char, {
-      y: 12,
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-  }
-
   const wavyItems = document.querySelectorAll(
     ".ornamen-3, .copy-ornamen-3, .ornamen3-section2, .ornamen4-section2, [class*='ornamen3-'], [class*='ornamen4-'], .ornamen1-section3, .ornamen2-section3, .ornamen1-section5, .copy-ornamen1-section5, .ornamen2-section5, .copy-ornamen2-section5"
   );
@@ -150,3 +169,20 @@ function initFloatingOrnaments() {
     });
   }
 }
+
+document.addEventListener("visibilitychange", () => {
+  const music = document.getElementById("wedding-music");
+  if (!music) return;
+
+  if (document.hidden) {
+    // Musik mati saat tamu buka WA atau pindah tab
+    music.pause();
+  } else {
+    // Musik lanjut lagi saat tamu balik ke undangan
+    // Cek dulu apakah halaman 'utama' sudah terbuka (bukan di home)
+    const utama = document.getElementById("utama");
+    if (utama && utama.style.display === "block") {
+      music.play().catch(() => {});
+    }
+  }
+});

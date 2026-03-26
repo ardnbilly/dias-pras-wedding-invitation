@@ -45,6 +45,10 @@ ul {
 
 #utama {
   display: none;
+  position: relative;
+  z-index: 1;
+  /* Memastikan tidak ada overlay transparan yang menghalangi */
+  pointer-events: auto !important;
 }
 
 .home-section {
@@ -327,13 +331,17 @@ ul {
   font-size: 14px;
 }
 
+.lihat-lokasi:hover {
+  opacity: 0.8;
+}
+
 .section5 {
   height: 100vh;
   background-image: url("assets/bg-pattern.png");
   background-size: contain;
   overflow: hidden;
   position: relative;
-  z-index: -5;
+  z-index: 2;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -372,13 +380,20 @@ ul {
   padding: 4px 12px;
   margin-top: 8px;
   margin-bottom: 8px;
+  display: block;
+  position: relative;
+  z-index: 99;
+}
+
+.salin-rek:hover {
+  opacity: 0.8;
 }
 
 .ornamen1-section5 {
   position: absolute;
   width: 100%;
   bottom: -100px;
-  z-index: -3;
+  z-index: 4;
   left: -45px;
   right: 0;
 }
@@ -388,7 +403,7 @@ ul {
   width: 100%;
   bottom: -90px;
   filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
-  z-index: -4;
+  z-index: 3;
   left: -40px;
   right: 0;
 }
@@ -397,7 +412,7 @@ ul {
   position: absolute;
   width: 100%;
   bottom: -100px;
-  z-index: -3;
+  z-index: 4;
   left: 20px;
   right: 0;
   transform: scaleX(-1);
@@ -408,7 +423,7 @@ ul {
   width: 100%;
   bottom: -90px;
   filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
-  z-index: -4;
+  z-index: 3;
   left: 15px;
   right: 0;
   transform: scaleX(-1);
