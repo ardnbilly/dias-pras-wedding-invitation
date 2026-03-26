@@ -1,0 +1,415 @@
+/* css reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Lora", serif;
+  color: var(--dark-green);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --light-red: #f3dcdc;
+  --dark-green: #303419;
+}
+
+@font-face {
+  font-family: "Higuen";
+  src: local("Higuen"), url("assets/higuen.otf");
+}
+
+#utama {
+  display: none;
+}
+
+.home-section {
+  background-color: var(--light-red);
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  position: relative;
+  color: var(--dark-green);
+  overflow: hidden;
+}
+
+.invited {
+  margin-bottom: 32px;
+}
+
+.name {
+  font-family: "Higuen", serif;
+  font-size: 60px;
+  margin-bottom: 32px;
+}
+
+.name-guest {
+  margin-bottom: 32px;
+}
+
+.btn-open {
+  background-color: var(--dark-green);
+  text-decoration: none;
+  color: var(--light-red);
+  padding: 8px 20px;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.btn-open:hover {
+  opacity: 0.8;
+}
+
+.top-ornamen1 {
+  width: 100%;
+  position: absolute;
+  transform: scaleY(-1);
+  top: -25px;
+  left: 0;
+  right: 0;
+}
+
+.bottom-ornamen1 {
+  width: 100%;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+}
+
+.section1 {
+  text-align: center;
+  height: 100vh;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+  z-index: -5;
+}
+
+.section1-top {
+  margin-top: 130px;
+}
+
+.section1-top .invited {
+  font-size: 20px;
+}
+
+.section1-top .name {
+}
+
+.time {
+}
+
+.section1-bottom {
+}
+
+.char {
+  width: 50%;
+  position: absolute;
+  z-index: -3;
+  left: 20%;
+  right: 0;
+  bottom: 0;
+}
+
+.ornamen-2 {
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+  z-index: -4;
+  left: 0;
+  right: 0;
+}
+
+.ornamen-3 {
+  position: absolute;
+  width: 100%;
+  z-index: -2;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+}
+
+.copy-ornamen-3 {
+  position: absolute;
+  width: 100%;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+}
+
+.section2 {
+  height: 100vh;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+  z-index: -5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ornamen1-section2 {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+  transform: scaleY(-1);
+  z-index: -4;
+  left: 0;
+  right: 0;
+}
+
+.ornamen2-section2 {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+  transform: scaleY(-1);
+  z-index: -3;
+  left: 0;
+  right: 0;
+}
+
+.ornamen3-section2 {
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+  z-index: -3;
+  left: 0;
+  right: 0;
+}
+
+.ornamen4-section2 {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+  z-index: -4;
+  left: 0;
+  right: 0;
+}
+
+.section2 p {
+  font-size: 12px;
+}
+
+.ucapan {
+  margin-bottom: 20px;
+}
+
+.section2 h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.dan {
+  margin-top: 12px;
+}
+
+.section3 {
+  height: 100vh;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+  z-index: -5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ornamen1-section3 {
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  z-index: -3;
+  left: 0;
+  right: 0;
+}
+
+.ornamen2-section3 {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+  z-index: -4;
+  left: 0;
+  right: 0;
+}
+
+.judul-ayat {
+  font-size: 24px;
+  font-family: Higuen;
+  margin-top: 120px;
+  margin-bottom: 12px;
+}
+
+.ayat {
+  margin-bottom: 32px;
+  width: 300px;
+}
+
+.arti-ayat {
+  font-size: 12px;
+  width: 300px;
+}
+
+.section4 {
+  height: 100vh;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.border {
+  border: 2px solid var(--dark-green);
+  border-radius: 32px;
+  padding: 64px 48px;
+}
+
+.judul-acara {
+  font-family: Higuen;
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.tempat {
+  margin-bottom: 48px;
+}
+
+.lihat-lokasi {
+  text-decoration: none;
+  color: var(--light-red);
+  background-color: var(--dark-green);
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.section5 {
+  height: 100vh;
+  background-image: url("assets/bg-pattern.png");
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+  z-index: -5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chip {
+  width: 30px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.wedding-gift {
+  font-family: Higuen;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.card {
+  font-family: "Montserrat";
+  text-align: left;
+  background-color: var(--dark-green);
+  color: var(--light-red);
+  width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.salin-rek {
+  text-decoration: none;
+  border-style: none;
+  background-color: #fbc83a;
+  color: black;
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.ornamen1-section5 {
+  position: absolute;
+  width: 100%;
+  bottom: -100px;
+  z-index: -3;
+  left: -45px;
+  right: 0;
+}
+
+.copy-ornamen1-section5 {
+  position: absolute;
+  width: 100%;
+  bottom: -90px;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+  z-index: -4;
+  left: -40px;
+  right: 0;
+}
+
+.ornamen2-section5 {
+  position: absolute;
+  width: 100%;
+  bottom: -100px;
+  z-index: -3;
+  left: 20px;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.copy-ornamen2-section5 {
+  position: absolute;
+  width: 100%;
+  bottom: -90px;
+  filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
+  z-index: -4;
+  left: 15px;
+  right: 0;
+  transform: scaleX(-1);
+}
