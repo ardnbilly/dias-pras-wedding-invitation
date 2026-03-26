@@ -2,6 +2,19 @@
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- FITUR NAMA TAMU DINAMIS ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const namaTamu = urlParams.get("to"); // Mengambil text setelah '?to='
+  const guestElement = document.querySelector(".name-guest");
+
+  if (guestElement && namaTamu) {
+    // Mengubah tanda plus (+) atau %20 menjadi spasi biasa
+    guestElement.innerText = decodeURIComponent(namaTamu);
+  } else if (guestElement) {
+    // Nama default jika link tidak ada parameter '?to='
+    guestElement.innerText = "Nama Tamu";
+  }
+
   const music = document.getElementById("wedding-music");
   const btnOpen = document.getElementById("open-btn");
   const home = document.querySelector(".home-section");
