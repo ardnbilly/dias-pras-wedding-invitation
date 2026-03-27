@@ -295,7 +295,6 @@ ul {
 }
 
 .section4 {
-  height: 100vh;
   background-image: url("assets/bg-pattern.png");
   background-size: contain;
   overflow: hidden;
@@ -304,31 +303,36 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 72px 0;
 }
 
 .border {
   border: 2px solid var(--dark-green);
   border-radius: 32px;
-  padding: 64px 48px;
+  padding: 24px 48px;
 }
 
 .judul-acara {
   font-family: Higuen;
   margin-bottom: 12px;
-  font-size: 32px;
+  font-size: 20px;
+  margin-top: 24px;
 }
 
 .tempat {
-  margin-bottom: 48px;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
 .lihat-lokasi {
   text-decoration: none;
   color: var(--light-red);
   background-color: var(--dark-green);
-  padding: 8px 24px;
+  padding: 6px 20px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
 }
 
 .lihat-lokasi:hover {
@@ -336,7 +340,6 @@ ul {
 }
 
 .section5 {
-  height: 100vh;
   background-image: url("assets/bg-pattern.png");
   background-size: contain;
   overflow: hidden;
@@ -346,6 +349,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 96px;
 }
 
 .chip {
@@ -358,6 +362,7 @@ ul {
   font-family: Higuen;
   font-size: 32px;
   margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .card {
@@ -391,7 +396,7 @@ ul {
 
 .ornamen1-section5 {
   position: absolute;
-  width: 100%;
+  width: 70%;
   bottom: -100px;
   z-index: 4;
   left: -45px;
@@ -400,7 +405,7 @@ ul {
 
 .copy-ornamen1-section5 {
   position: absolute;
-  width: 100%;
+  width: 70%;
   bottom: -90px;
   filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
   z-index: 3;
@@ -410,21 +415,21 @@ ul {
 
 .ornamen2-section5 {
   position: absolute;
-  width: 100%;
-  bottom: -100px;
+  width: 70%;
+  bottom: -10%;
   z-index: 4;
-  left: 20px;
+  left: 40%;
   right: 0;
   transform: scaleX(-1);
 }
 
 .copy-ornamen2-section5 {
   position: absolute;
-  width: 100%;
-  bottom: -90px;
+  width: 70%;
+  bottom: -8%;
   filter: invert(1) grayscale(1) brightness(1) opacity(0.8);
   z-index: 3;
-  left: 15px;
+  left: 43%;
   right: 0;
   transform: scaleX(-1);
 }
